@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prérequis
 
 L'installation de ce projet nécessite :  
-- Go 1.13 (https://golang.org/dl/)  
+- Go >1.13 (https://golang.org/dl/)  
 - NPM (https://www.npmjs.com/get-npm) ou un autre gestionnaire de paquets JS    
 
 Si NPM est déjà installé, s'assurer d'avoir la dernière version :
@@ -19,12 +19,13 @@ sudo npm install npm@latest -g
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+Copier le dossier **API** dans un dossier nommé **louislaugier** à la racine de ~~~$GOPATH/src/github.com/~~~
 
+exemple (remplacer "louis" par son utilisateur machine) :
 ```
-Give the example
+cd /Users/louis/go/src/github.com
+mkdir louislaugier
 ```
 
 And repeat
