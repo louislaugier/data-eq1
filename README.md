@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prérequis
 
 L'installation de ce projet nécessite :
-Go 1.13 https://golang.org/dl/
+Go 1.13 (https://golang.org/dl/)  
 Un gestionnaire de paquets (NPM pour l'exemple)
 
 ```
