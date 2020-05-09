@@ -22,11 +22,12 @@ sudo npm install npm@latest -g
 
 Copier le dossier **API** dans un dossier nommé **louislaugier** à la racine de ~~~$GOPATH/src/github.com/~~~
 
-exemple (remplacer "louis" par son utilisateur machine) :
+Exemple :
 ```
 cd /Users/louis/go/src/github.com
 mkdir louislaugier
 ```
+Remplacer **louislaugier** par son utilisateur machine et copier **API** dans ce dossier
 
 And repeat
 
