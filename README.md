@@ -1,4 +1,4 @@
-# Project Title
+# Projet Data
 
 One Paragraph of project description goes here
 
@@ -6,9 +6,11 @@ One Paragraph of project description goes here
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Prérequis
 
-What things you need to install the software and how to install them
+L'installation de ce projet nécessite :
+Go 1.13 https://golang.org/dl/
+Un gestionnaire de paquets (NPM pour l'exemple)
 
 ```
 Give examples
