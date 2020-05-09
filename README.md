@@ -10,10 +10,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 L'installation de ce projet nécessite :
 Go 1.13 (https://golang.org/dl/)  
-Un gestionnaire de paquets (NPM pour l'exemple)
-
+NPM (https://www.npmjs.com/get-npm) ou un autre gestionnaire de paquets JS  
+Si NPM est déjà installé, s'assurer d'avoir la dernière version :
 ```
-Give examples
+sudo npm install npm@latest -g
 ```
 
 ### Installing
