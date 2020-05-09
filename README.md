@@ -27,7 +27,6 @@ Exemple :
 cd /Users/louis/go/src/github.com
 mkdir louislaugier
 ```
-Remplacer */Users/louis/go* par son *$GOPATH* machine et copier **API** dans **louislaugier**.
 
 And repeat
 
