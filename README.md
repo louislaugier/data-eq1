@@ -1,5 +1,6 @@
 # Projet Data
 
+
 ## Client : RATP
 
 Ce repo contient...
@@ -14,6 +15,7 @@ Si NPM est déjà installé, s'assurer d'avoir la dernière version :
 
 ```sudo npm install npm@latest -g```
 
+
 ## Installation serveur HTTP
 
 Copier le dossier dans **$GOPATH/src/** puis :
@@ -25,6 +27,7 @@ Copier le dossier dans **$GOPATH/src/** puis :
 Go va installer les packages nécessaires et servir l'application sur le port 80.  
 Une documentation Swagger expliquant les différentes routes de l'API sera disponible à l'adresse suivante : http://localhost:80/api/v1/documentation/
 
+
 ## Installation serveur front-end
 
 ```cd /data-eq1/client```
@@ -35,7 +38,8 @@ Générer un build de production : ```npm run build```
 
 Servir l'application sur le port 5000 : ```serve -s build```
 
-## Deployment
+
+## Parties incomplètes du projet
 
 Add additional notes about how to deploy this on a live system
 
@@ -55,32 +59,15 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+## Librairies externes utilisées
 
-## Contributing
+### Go
+- https://github.com/gorilla/mux : Multiplexer de requêtes HTTP (routing & dispatching) 
+- https://github.com/lib/pq : Driver Postgres pour le package database/sql de la librairie standard
+- https://github.com/paulmach/go.geojson
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
+### React
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
