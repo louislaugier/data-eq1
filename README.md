@@ -45,9 +45,21 @@ Add additional notes about how to deploy this on a live system
 
 ### Fausses donneés
 
-- Onglet *Insights* 
+Les données suivantes ont été simulées ou *randomisées* afin de rendre la présentation au client plus réaliste. Ces données doivent provenir de l'application mobile (solution finale prototypée).
+
+- Onglet **Insights** : données en haut de page et en bas de page, indices du graphique de droite (faux indices, il s'agit des unités de chaque critère)
+
+- Onglet **Voyageurs** : données en haut de page, les noms et prénoms des utilisateurs (données MaRATP non nominatives), les statistiques/badges/la relation des utilisateurs.
+Les données présentes dans la table *trajets* de la base de données correspondent à des exemples de trajets générés par les utilisateurs de l'app mobile prototypée. Ces trajets ont été assignés à des clients par leur identifiant (table fournie en début de projet). La barre de recherche d'un utilisateur ne fonctionne avec qu'avec cet identifiant, pour les clients ayant effectué des trajets.
+
+### Parties incomplètes
+
+- La page de connexion n'authentifie pas réellement l'utilisateur
+- Page **Données** : La météo affichée pour les graphiques de la qualité de l'air est la même pour tout Paris, elle ne change pas pour chaque arrondissement. Le bouton d'ajout d'une table n'en crée pas réellement une. Le bouton de modification d'une table permet simplement de la visualiser, la fonctionnalité d'ajout et de modification des entrées ne fonctionne que côté client. Le bouton de téléchargement de la table au format CSV est décoratif.
 
 ### Améliorations souhaitées
+
+Responsive, loaders, memory leaks, routing
 
 Lorem ipsum lorem ipsum lorem ipsum lorem ipsum
 
