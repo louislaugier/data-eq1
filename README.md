@@ -45,7 +45,7 @@ Servir l'application sur le port 5000 : ```serve -s build```
 
 Les données suivantes ont été simulées ou *randomisées* afin de rendre la présentation au client plus réaliste. Ces données sont censées provenir de l'application mobile (solution finale prototypée).
 
-- Onglet **Insights** : données en haut de page et en bas de page, indices du graphique de droite (faux indices, il s'agit des unités de chaque critère)
+- Onglet **Insights** : données en haut de page et en bas de page, indices du graphique de droite (faux indices, il s'agit des unités de chaque critère).
 
 - Onglet **Voyageurs** : données en haut de page, les noms et prénoms des utilisateurs (données MaRATP non nominatives), les statistiques/badges/la relation des utilisateurs.
 
@@ -53,7 +53,7 @@ Les données présentes dans la table *trajets* de la base de données correspon
 
 ### Parties incomplètes
 
-- La page de connexion n'authentifie pas d'utilisateur
+- La page de connexion n'authentifie pas d'utilisateur.
 - Page **Données** : La météo affichée pour les graphiques de la qualité de l'air est la même pour tout Paris, elle ne change pas pour chaque arrondissement. Le bouton d'ajout d'une table n'en crée pas réellement une. Le bouton de modification d'une table permet simplement de la visualiser, la fonctionnalité d'ajout et de modification des entrées ne fonctionne que côté client. Le bouton de téléchargement d'une table au format CSV n'est pas fonctionnel.
 
 ### Améliorations souhaitées
