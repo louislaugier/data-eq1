@@ -17,9 +17,12 @@ sudo npm install npm@latest -g
 
 ### Installation API
 
-Copier le dossier **API** à la racine de **$GOPATH/src/github.com/**.
+Copier le dossier dans **$GOPATH/src/**
 
-``` cd ``` le dossier **API** puis éxécuter la commande :
+```
+cd $GOPATH/src/data-eq1/API
+```
+puis :
 ```
 make run
 ```
