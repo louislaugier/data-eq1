@@ -11,17 +11,15 @@ L'installation de ce projet nécessite :
 - NPM (https://www.npmjs.com/get-npm) ou un autre package manager JS    
 
 Si NPM est déjà installé, s'assurer d'avoir la dernière version :
-```
-sudo npm install npm@latest -g
-```
+
+```sudo npm install npm@latest -g```
 
 ## Installation serveur HTTP
 
 Copier le dossier dans **$GOPATH/src/** puis :
 
-```
-cd $GOPATH/src/data-eq1/API
-```
+```cd $GOPATH/src/data-eq1/API```
+
 ```make run``` ou ```go run main.go```  
 
 Go va installer les packages nécessaires et servir l'API sur le port 80.  
