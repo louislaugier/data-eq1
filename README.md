@@ -1,8 +1,6 @@
 # Projet Data
 
-Client : RATP
-
-## Getting Started
+## RATP
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -17,7 +15,7 @@ Si NPM est déjà installé, s'assurer d'avoir la dernière version :
 sudo npm install npm@latest -g
 ```
 
-### Installing
+### Installation
 
 
 Copier le dossier **API** à la racine de **$GOPATH/src/github.com/**.
