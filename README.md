@@ -1,8 +1,8 @@
 # Projet Data
 
-## RATP
+## Client : RATP
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Ce repo contient...
 
 ### Prérequis
 
@@ -15,17 +15,19 @@ Si NPM est déjà installé, s'assurer d'avoir la dernière version :
 sudo npm install npm@latest -g
 ```
 
-### Installation
-
+### Installation API
 
 Copier le dossier **API** à la racine de **$GOPATH/src/github.com/**.
 
-Exemple :
+``` cd ``` le dossier **API** puis éxécuter la commande :
 ```
-
+make run
 ```
-
-And repeat
+ou
+```
+go run main.go
+```
+Go va installer les packages nécessaires et initialiser le serveur.
 
 ```
 until finished
