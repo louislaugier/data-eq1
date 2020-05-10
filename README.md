@@ -22,7 +22,7 @@ Copier le dossier dans **$GOPATH/src/**
 ```
 cd $GOPATH/src/data-eq1/API
 ```
-Puis
+
 ```
 make run
 ```
