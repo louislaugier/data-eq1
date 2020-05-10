@@ -22,8 +22,8 @@ Copier le dossier dans **$GOPATH/src/** puis :
 
 ```make run``` ou ```go run main.go```  
 
-Go va installer les packages nécessaires et servir l'API sur le port 80.  
-Une documentation Swagger expliquant les différentes routes sera disponible à l'adresse suivante : http://localhost:80/api/v1/documentation/
+Go va installer les packages nécessaires et servir l'application sur le port 80.  
+Une documentation Swagger expliquant les différentes routes de l'API sera disponible à l'adresse suivante : http://localhost:80/api/v1/documentation/
 
 ## Installation serveur front-end
 
