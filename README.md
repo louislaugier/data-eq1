@@ -60,14 +60,19 @@ Give an example
 ```
 
 
-## Librairies externes utilisées
+## Packages externes utilisées
 
 ### Go
 - https://github.com/gorilla/mux : Multiplexer de requêtes HTTP (routing & dispatching) 
 - https://github.com/lib/pq : Driver Postgres pour le package database/sql de la librairie standard
-- https://github.com/paulmach/go.geojson
-
+- https://github.com/paulmach/go.geojson : Encodeur et décodeur de GeoJSON
 
 ### React
+- https://www.npmjs.com/package/mapbox-gl : Cartes interactives et personnalisables
+- https://www.npmjs.com/package/react-apexcharts : Datavisualisations interactives
+- https://www.npmjs.com/package/material-table : Tableaux personnalisables
+- https://www.npmjs.com/package/react-router : Routeur côté client
+
+
 
 
