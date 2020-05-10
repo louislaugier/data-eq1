@@ -17,7 +17,7 @@ sudo npm install npm@latest -g
 
 ### Installation serveur HTTP
 
-Copier le dossier dans **$GOPATH/src/**
+Copier le dossier dans **$GOPATH/src/** puis :
 
 ```
 cd $GOPATH/src/data-eq1/API
