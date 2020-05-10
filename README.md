@@ -30,7 +30,8 @@ ou
 ```
 go run main.go
 ```
-Go va installer les packages nécessaires et initialiser le serveur.
+Go va installer les packages nécessaires et initialiser le serveur sur le port 80.
+Une documentation Swagger expliquant les routes sera disponible à l'adresse suivante : http://localhost/api/v1/documentation/
 
 ```
 until finished
