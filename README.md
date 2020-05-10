@@ -15,33 +15,41 @@ Si NPM est déjà installé, s'assurer d'avoir la dernière version :
 sudo npm install npm@latest -g
 ```
 
-### Installation API
+### Installation serveur HTTP
 
 Copier le dossier dans **$GOPATH/src/**
 
 ```
 cd $GOPATH/src/data-eq1/API
 ```
-puis :
+Puis
 ```
 make run
 ```
-ou
+Ou
 ```
 go run main.go
 ```
-Go va installer les packages nécessaires et initialiser le serveur sur le port 80.
-Une documentation Swagger expliquant les routes sera disponible à l'adresse suivante : http://localhost/api/v1/documentation/
+Go va installer les packages nécessaires et servir l'API sur le port 80.  
+Une documentation Swagger expliquant les différentes routes sera disponible à l'adresse suivante : http://localhost:80/api/v1/documentation/
+
+## Installation serveur front-end
 
 ```
-until finished
+cd /data-eq1/client
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
+Puis installer les dépendances
+```
+npm i
+```
+Générer un build de production
+```
+npm run build
+```
+Servir l'application sur le port 5000
+```
+serve -s build
+```
 
 ### Break down into end to end tests
 
