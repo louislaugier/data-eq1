@@ -35,6 +35,10 @@ Générer un build de production : ```npm run build```
 
 Servir l'application sur le port 5000 : ```serve -s build```
 
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
 ### Break down into end to end tests
 
 Explain what these tests test and why
@@ -50,10 +54,6 @@ Explain what these tests test and why
 ```
 Give an example
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
