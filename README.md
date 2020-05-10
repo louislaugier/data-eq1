@@ -43,7 +43,7 @@ Servir l'application sur le port 5000 : ```serve -s build```
 
 Add additional notes about how to deploy this on a live system
 
-### Break down into end to end tests
+### Fausses donneés
 
 Explain what these tests test and why
 
@@ -51,7 +51,7 @@ Explain what these tests test and why
 Give an example
 ```
 
-### And coding style tests
+### Améliorations souhaitées
 
 Explain what these tests test and why
 
