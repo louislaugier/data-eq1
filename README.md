@@ -8,14 +8,14 @@ Ce repo contient...
 
 L'installation de ce projet nécessite :  
 - Go >1.13 (https://golang.org/dl/)  
-- NPM (https://www.npmjs.com/get-npm) ou un autre gestionnaire de paquets JS    
+- NPM (https://www.npmjs.com/get-npm) ou un autre package manager JS    
 
 Si NPM est déjà installé, s'assurer d'avoir la dernière version :
 ```
 sudo npm install npm@latest -g
 ```
 
-### Installation serveur HTTP
+## Installation serveur HTTP
 
 Copier le dossier dans **$GOPATH/src/** puis :
 
