@@ -45,20 +45,15 @@ Add additional notes about how to deploy this on a live system
 
 ### Fausses donneés
 
-Explain what these tests test and why
-
-```
-Give an example
-```
+- Onglet *Insights* 
 
 ### Améliorations souhaitées
 
-Explain what these tests test and why
+Lorem ipsum lorem ipsum lorem ipsum lorem ipsum
 
 ```
-Give an example
+Exemple
 ```
-
 
 ## Packages externes utilisées
 
