@@ -41,16 +41,15 @@ Servir l'application sur le port 5000 : ```serve -s build```
 
 ## Parties incomplètes du projet
 
-Add additional notes about how to deploy this on a live system
-
 ### Fausses donneés
 
-Les données suivantes ont été simulées ou *randomisées* afin de rendre la présentation au client plus réaliste. Ces données doivent provenir de l'application mobile (solution finale prototypée).
+Les données suivantes ont été simulées ou *randomisées* afin de rendre la présentation au client plus réaliste. Ces données sont censées provenir de l'application mobile (solution finale prototypée).
 
 - Onglet **Insights** : données en haut de page et en bas de page, indices du graphique de droite (faux indices, il s'agit des unités de chaque critère)
 
 - Onglet **Voyageurs** : données en haut de page, les noms et prénoms des utilisateurs (données MaRATP non nominatives), les statistiques/badges/la relation des utilisateurs.
-Les données présentes dans la table *trajets* de la base de données correspondent à des exemples de trajets générés par les utilisateurs de l'app mobile prototypée. Ces trajets ont été assignés à des clients par leur identifiant (table fournie en début de projet). La barre de recherche d'un utilisateur ne fonctionne avec qu'avec cet identifiant, pour les clients ayant effectué des trajets.
+
+Les données présentes dans la table *trajets* de la base de données correspondent à des exemples de trajets générés par les utilisateurs de l'app mobile prototypée. Ces trajets ont été assignés à des clients par leur identifiant (table fournie en début de projet). La barre de recherche d'un utilisateur (onglet **Voyageurs**) ne fonctionne avec qu'avec cet identifiant, pour les clients ayant effectué des trajets.
 
 ### Parties incomplètes
 
