@@ -3,7 +3,7 @@
 
 ## Client : RATP
 
-Ce repo contient le code back-end et le code front-end du projet Data de l'équipe 1.
+Ce dossier contient le code back-end et le code front-end du projet Data de l'équipe 1.
 
 ### Prérequis
 
