@@ -27,21 +27,13 @@ Une documentation Swagger expliquant les différentes routes sera disponible à 
 
 ## Installation serveur front-end
 
-```
-cd /data-eq1/client
-```
-Puis installer les dépendances
-```
-npm i
-```
-Générer un build de production
-```
-npm run build
-```
-Servir l'application sur le port 5000
-```
-serve -s build
-```
+```cd /data-eq1/client```
+
+Puis installer les dépendances : ```npm i```
+
+Générer un build de production : ```npm run build```
+
+Servir l'application sur le port 5000 : ```serve -s build```
 
 ### Break down into end to end tests
 
