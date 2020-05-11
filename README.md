@@ -58,7 +58,8 @@ Les données présentes dans la table *trajets* de la base de données correspon
 
 ### Améliorations souhaitées
 
-Responsive, loaders, memory leaks, routing
+Responsive, loaders, memory leaks, routing  
+- Une gestion plus précise des erreurs dans l'API
 
 ```
 Exemple
