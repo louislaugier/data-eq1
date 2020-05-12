@@ -19,7 +19,7 @@ S'assurer d'avoir la dernière version de NPM :
 
 Copier le dossier dans **$GOPATH/src/** puis :
 
-```cd $GOPATH/src/data-eq1/API```
+```cd API```
 
 ```make run``` ou ```go run main.go```  
 
@@ -28,7 +28,7 @@ Une documentation Swagger expliquant les différentes routes de l'API sera dispo
 
 ## Installation serveur front-end
 
-```cd /data-eq1/client```
+```cd ./client```
 
 Puis installer les dépendances : ```npm i```
 
