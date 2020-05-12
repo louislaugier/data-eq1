@@ -134,7 +134,7 @@ func ClientGET(w http.ResponseWriter, r *http.Request) {
 func ClientCreate(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
-	var client client
+	var client *client
 	_ = json.NewDecoder(r.Body).Decode(&client)
 	txn, err := database.Db.Begin()
 	if err != nil {
@@ -142,9 +142,14 @@ func ClientCreate(w http.ResponseWriter, r *http.Request) {
 	}
 	txn.Exec("INSERT INTO clients (identifiant, age, genre, code_postal, anciennete, abonne_alerting, alertes, titre_transport, frequence_transport, favoris_horaires, favoris_adresses) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);", client.ID, client.Age, client.Genre, client.CodePostal, client.Annciennete, client.AbonneAlerting, client.Alertes, client.TitreTransport, client.FrequenceTransport, client.FavorisHoraires, client.FavorisAdresses)
 	res := model.Response{
-		StatusCode: 200,
+		StatusCode: 201,
 		Error:      "",
 		Message:    "Client " + strconv.Itoa(client.ID) + " created",
+	}
+	if client == nil {
+		res.StatusCode = 204
+		res.Message = "Empty payload"
+		res.Error = ""
 	}
 	err = txn.Commit()
 	if err != nil {
@@ -163,7 +168,7 @@ func ClientUpdate(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	ID, _ := mux.Vars(r)["id"]
-	var client client
+	var client *client
 	_ = json.NewDecoder(r.Body).Decode(&client)
 	txn, err := database.Db.Begin()
 	if err != nil {
@@ -171,9 +176,14 @@ func ClientUpdate(w http.ResponseWriter, r *http.Request) {
 	}
 	txn.Exec("UPDATE clients SET identifiant = $1, age = $2, genre = $3, code_postal = $4, anciennete = $5, abonne_alerting = $6, alertes = $7, titre_transport = $8, frequence_transport = $9, favoris_horaires = $10, favoris_adresses = $11 WHERE identifiant = "+ID+";", client.ID, client.Age, client.Genre, client.CodePostal, client.Annciennete, client.AbonneAlerting, client.Alertes, client.TitreTransport, client.FrequenceTransport, client.FavorisHoraires, client.FavorisAdresses)
 	res := model.Response{
-		StatusCode: 200,
+		StatusCode: 201,
 		Error:      "",
 		Message:    "Client " + ID + " updated",
+	}
+	if client == nil {
+		res.StatusCode = 204
+		res.Message = "Empty payload"
+		res.Error = ""
 	}
 	err = txn.Commit()
 	if err != nil {
