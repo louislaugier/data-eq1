@@ -10,7 +10,7 @@ L'installation de ce projet nécessite :
 - Go > 1.13 
 - NPM 
 
-S'assurer d'avoir la dernière version de NPM :
+S'assurer d'avoir la dernière version stable de NPM :
 
 ```sudo npm install npm@latest -g```
 
