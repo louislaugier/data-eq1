@@ -1570,6 +1570,15 @@ input[type='checkbox']:checked:after{
   margin: 0 auto;
 }
 
+.User .Relation .User-positive:after{
+  content: "\f2bd";
+  color: #88D56B;
+  font-family: 'FontAwesome';
+  font-size: 4rem;
+  margin-top: 4vh;
+  display: block;
+}
+
 .User .Badges h3, .User .Badges span:nth-child(2), .User .Relation h3, .User .Relation span:nth-child(2){
   text-align: left;
   padding-left: 1vw;

@@ -96,7 +96,7 @@ export default {
     query: 'indices-nuisances-sonores',
     series: [
       {
-      name: 'decibels (dernières données)',
+      name: 'décibels',
       data: []
       }
     ],
@@ -131,7 +131,7 @@ export default {
         opposite: 'true'
       },
       title: {
-        text: 'Niveau sonore moyen en decibels'
+        text: 'Niveau sonore moyen en décibels'
       },
       tooltip: {
         y: [

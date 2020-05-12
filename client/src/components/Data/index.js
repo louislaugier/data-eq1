@@ -123,7 +123,7 @@ class Data extends React.Component {
             this.setState({arrondissementFilter: 'block'})
             switch (event.target.value) {
               case 'Nuisances sonores':
-                this.setState({sidebarData: 'Données historiques', options: criteria.nuisancesSonores.options})
+                this.setState({sidebarData: 'Dernières données', options: criteria.nuisancesSonores.options})
                 this.addDataToChart(this.state.arr, criteria.nuisancesSonores)
                 break
               case 'Nuisances visuelles':

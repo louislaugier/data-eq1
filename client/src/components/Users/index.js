@@ -3,7 +3,6 @@ import Head from './Head'
 import {fetchData} from '../Map/functions'
 import redTrophy from '../../assets/red-trophy.png'
 import yellowTrophy from '../../assets/yellow-trophy.png'
-import smiley from '../../assets/smiley.png'
 
 const emptyClient = {
   name: 'N/A',
@@ -128,7 +127,7 @@ class Users extends React.Component {
               this.setState({client: clientData[0], naDisplay: 'none', dataDisplay: 'block', clientStats: {
                 nbJourneys: Math.floor(Math.random() * Math.floor(34)),
                 typePref: 'Marche',
-                caloriesLost: parseInt(Math.floor(Math.random() * Math.floor(1500))).toLocaleString(),
+                caloriesLost: parseInt(Math.floor(Math.random() * Math.floor(5000))).toLocaleString(),
                 kmTraveled: Math.floor(Math.random() * Math.floor(468)),
                 carbonDioxydeSaved: Math.floor(Math.random() * Math.floor(1492))
               }})
@@ -200,8 +199,8 @@ class Users extends React.Component {
               <span>De l'utilisateur</span>
               {noData('p')}
               <div style={{display: this.state.dataDisplay}}>
-                <img src={smiley} alt='Smiley'/>
-                <p>utilisateur très fidèle de l'application.</p>
+                  <span className='User-positive'/>
+                <p>utilisateur fidèle à Citi+.</p>
                 <span>Utilisation moyenne : 2 à 3 fois par jour</span>
               </div>
             </div>
