@@ -8,7 +8,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/louislaugier/projet-data-4A-go/model"
+	"data-eq1/API/model"
+
 	geojson "github.com/paulmach/go.geojson"
 )
 

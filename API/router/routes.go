@@ -3,16 +3,16 @@ package router
 import (
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"data-eq1/API/model/airparif"
+	"data-eq1/API/model/bruitparif"
+	"data-eq1/API/model/database"
+	"data-eq1/API/model/elevation"
+	"data-eq1/API/model/maratp"
+	"data-eq1/API/model/paris"
+	"data-eq1/API/model/ratp"
+	"data-eq1/API/model/velib"
 
-	"github.com/louislaugier/projet-data-4A-go/model/airparif"
-	"github.com/louislaugier/projet-data-4A-go/model/bruitparif"
-	"github.com/louislaugier/projet-data-4A-go/model/database"
-	"github.com/louislaugier/projet-data-4A-go/model/elevation"
-	"github.com/louislaugier/projet-data-4A-go/model/maratp"
-	"github.com/louislaugier/projet-data-4A-go/model/paris"
-	"github.com/louislaugier/projet-data-4A-go/model/ratp"
-	"github.com/louislaugier/projet-data-4A-go/model/velib"
+	"github.com/gorilla/mux"
 )
 
 // Init initiates the router

@@ -7,8 +7,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/louislaugier/projet-data-4A-go/database"
-	"github.com/louislaugier/projet-data-4A-go/model"
+	"data-eq1/API/database"
+	"data-eq1/API/model"
+
 	geojson "github.com/paulmach/go.geojson"
 )
 

@@ -6,9 +6,10 @@ import (
 	"net/http"
 	"strconv"
 
+	"data-eq1/API/database"
+	"data-eq1/API/model"
+
 	"github.com/gorilla/mux"
-	"github.com/louislaugier/projet-data-4A-go/database"
-	"github.com/louislaugier/projet-data-4A-go/model"
 )
 
 type journey struct {

@@ -7,7 +7,7 @@ import (
 	"math"
 	"net/http"
 
-	"github.com/louislaugier/projet-data-4A-go/model"
+	"data-eq1/API/model"
 )
 
 // JSONData struct to decode response
