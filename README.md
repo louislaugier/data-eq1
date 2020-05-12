@@ -56,10 +56,11 @@ Les données présentes dans la table *trajets* de la base de données correspon
 - Page **Données** : La météo affichée pour les graphiques de la qualité de l'air est la même pour tout Paris, elle ne change pas pour chaque arrondissement. Le bouton d'ajout d'une table n'en crée pas réellement une. Le bouton de modification d'une table permet simplement de la visualiser, la fonctionnalité d'ajout et de modification des entrées ne fonctionne que côté client. Le bouton de téléchargement d'une table au format CSV n'est pas fonctionnel.
 
 ### Améliorations souhaitées
+  
+- Une gestion plus précise des erreurs et des types de réponses (status codes) dans l'API
+- 
 
-Responsive, loaders, memory leaks, routing  
-- Une gestion plus précise des erreurs dans l'API
-
+Responsive, loaders, memory leaks, routing
 ```
 Exemple
 ```
