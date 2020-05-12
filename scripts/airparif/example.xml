@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:Execute xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns="http://www.opengis.net/wps/1.0.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:wcs="http://www.opengis.net/wcs/1.1.1" xmlns:wfs="http://www.opengis.net/wfs" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.0" service="WPS" xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsAll.xsd">
+   <ows:Identifier>py:itineraire3</ows:Identifier>
+   <wps:DataInputs>
+      <wps:Input>
+         <ows:Identifier>points</ows:Identifier>
+         <wps:Data>
+            <wps:ComplexData mimeType="application/json">
+               <![CDATA[
+                  [
+                     {
+                        "type": "FeatureCollection",
+                        "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::27572" } },
+                        "features": 
+                           [
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601713.89080613398, 2428248.9992241841 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601767.12989957456, 2428204.166303392 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601879.21220155479, 2428136.9169222037 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601926.84717989631, 2428080.8757712138 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601845.58751096076, 2428044.4490230703 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601730.70315143105, 2427991.2099296297 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601596.20438905479, 2427921.158490892 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601540.16323806474, 2427867.9193974514 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601629.82907964883, 2427786.6597285159 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601687.27125941357, 2427737.6237214003 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601758.72372692602, 2427654.96302369 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601804.95767649263, 2427610.1301028975 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601904.43071950006, 2427503.6519160164 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601851.19162605947, 2427555.4899806823 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601950.6646690669, 2427447.6107650264 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              601988.49244598532, 2427411.1840168829 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              602040.33051065123, 2427346.736693244 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              602071.15314369579, 2427311.7109738751 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              602170.62618670322, 2427370.5541824149 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              602134.19943855959, 2427345.3356644693 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              602212.65704994579, 2427405.5799017837 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              602263.0940858369, 2427449.0117938011 ] } },
+                              { "type": "Feature", "properties": { }, "geometry": { "type": "Point", "coordinates": [
+                              602288.3126037824, 2427471.4282541974 ] } }
+                           ]
+                     }
+                  ]
+               ]]>
+            </wps:ComplexData>
+         </wps:Data>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>indice</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_indice</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>no2</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_no2</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>o3</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_o3</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>pm10</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_pm10</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>pm25</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_pm25</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+   </wps:DataInputs>
+   <wps:ResponseForm>
+      <wps:RawDataOutput mimeType="application/json">
+         <ows:Identifier>result</ows:Identifier>
+      </wps:RawDataOutput>
+   </wps:ResponseForm>
+</wps:Execute>

@@ -1,0 +1,1253 @@
+openapi: 3.0.1
+info:
+  title: Citi+
+  description: Documentation for Citi+ REST API.
+  termsOfService: https://www.ratp.fr/gestion-de-vos-donnees-personnelles
+  contact:
+    email: l_laugier@etu-webschoolfactory.fr
+  license:
+    name: MIT License
+    url: http://localhost:80/api/v1/documentation/LICENSE
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- url: http://localhost:80/api/v1/
+tags:
+- name: airparif
+  description: Access to realtime air quality in downtown Paris
+  externalDocs:
+    description: source
+    url: https://www.airparif.asso.fr/rss/api
+- name: bruitparif
+  description: Access to sound levels in downtown Paris
+  externalDocs:
+    description: source
+    url: https://rumeur.bruitparif.fr/
+- name: database
+  description: Access to database tables
+  externalDocs:
+    description: source
+    url: https://www.postgresql.org/
+- name: elevation
+  description: Access to realtime landscape elevation in downtown Paris
+  externalDocs:
+    description: source
+    url: https://developers.google.com/maps/documentation/elevation
+- name: maratp
+  description: Access to user data from MaRATP and draft user-generated data from
+    mobile app
+  externalDocs:
+    description: source
+    url: https://maratp.ratp.fr/
+- name: paris
+  description: Access to green area data and realtime weather in downtown Paris
+  externalDocs:
+    description: source
+    url: https://opendata.paris.fr/
+- name: ratp
+  description: Access to Paris metro and buses data + RATP-owned RER lines data
+  externalDocs:
+    description: source
+    url: https://dataratp.opendatasoft.com/explore/dataset/positions-geographiques-des-stations-du-reseau-ratp/export/
+- name: velib
+  description: Access to Vélib stations data in downtown Paris and suberbs
+  externalDocs:
+    description: source
+    url: https://opendata.paris.fr/explore/dataset/velib-disponibilite-en-temps-reel/export/
+paths:
+  /zones-qualite-air:
+    get:
+      tags:
+      - airparif
+      summary: Get a GeoJSON feature collection of chosen areas with air quality data
+        as properties
+      operationId: ZonesGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/featureCollection'
+        500:
+          description: Database error
+          content: {}
+  /indices-qualite-air/{arrondissement}:
+    get:
+      tags:
+      - airparif
+      summary: Get air quality data by arrondissement number for the last 7 days
+      description: Use "all" for an average of all arrondissements.
+      operationId: DataGET
+      parameters:
+      - name: arrondissement
+        in: path
+        description: 'example: 15'
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/airQuality'
+        500:
+          description: Database error
+          content: {}
+  /arrondissements-qualite-air:
+    get:
+      tags:
+      - airparif
+      summary: Get a GeoJSON feature collection of areas in each arrondissement with
+        air quality data as properties
+      operationId: ArrondissementsGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/featureCollection'
+        500:
+          description: Database error
+          content: {}
+  /zones-nuisances-sonores:
+    get:
+      tags:
+      - bruitparif
+      summary: Get a GeoJSON feature collection of areas in each arrondissement with
+        sound nuisance data as properties
+      operationId: BruitparifZonesGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/featureCollection'
+        500:
+          description: Database error
+          content: {}
+  /indices-nuisances-sonores/{arrondissement}:
+    get:
+      tags:
+      - bruitparif
+      summary: Get sound nuisance data by arrondissement number for the last 7 recorded
+        days
+      description: Use "all" for an average of all arrondissements.
+      operationId: BruitparifDataGET
+      parameters:
+      - name: arrondissement
+        in: path
+        description: 'example: 15'
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/soundNuisance'
+        500:
+          description: Database error
+          content: {}
+  /tables-bdd:
+    get:
+      tags:
+      - database
+      summary: Get all table names from database
+      operationId: TablesGET
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: string
+      - name: offset
+        in: query
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/table'
+        500:
+          description: Database error
+          content: {}
+  /colonnes-table/{table}:
+    get:
+      tags:
+      - database
+      summary: Get column names by table name
+      operationId: ColsGET
+      parameters:
+      - name: table
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cols'
+        500:
+          description: Database error
+          content: {}
+  /rangees-table/{table}:
+    get:
+      tags:
+      - database
+      summary: Get string records by table name
+      operationId: RowsGET
+      parameters:
+      - name: table
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rows'
+        500:
+          description: Database error
+          content: {}
+  /zones-elevation:
+    get:
+      tags:
+      - elevation
+      summary: Get a GeoJSON feature collection of chosen areas with landscape elevation
+        data as properties
+      operationId: ElevationZonesGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/featureCollection'
+        500:
+          description: Database error
+          content: {}
+  /indices-elevation:
+    get:
+      tags:
+      - elevation
+      summary: Get landscape elevation data for all arrondissements
+      operationId: ElevationDataGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/landscapeNuisance'
+        500:
+          description: Database error
+          content: {}
+  /indice-elevation/{arrondissement}:
+    get:
+      tags:
+      - elevation
+      summary: Get landscape elevation data by arrondissement number
+      operationId: ArrondissementGET
+      parameters:
+      - name: arrondissement
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
+                format: double
+        500:
+          description: Database error
+          content: {}
+  /maratp-clients:
+    get:
+      tags:
+      - maratp
+      summary: Get all clients
+      operationId: ClientsGET
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: string
+      - name: offset
+        in: query
+        schema:
+          type: string
+      - name: genre
+        in: query
+        schema:
+          type: string
+          enum:
+          - femme
+          - homme
+      - name: titre_transport
+        in: query
+        description: 'example: Navigo Mois'
+        schema:
+          type: string
+      - name: frequence_transport
+        in: query
+        description: 'example: 1 fois par semaine'
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/client'
+        500:
+          description: Database error
+          content: {}
+    post:
+      tags:
+      - maratp
+      summary: Create a new client
+      operationId: ClientCreate
+      requestBody:
+        description: Client object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/client'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/client'
+        500:
+          description: Database error
+          content: {}
+      x-codegen-request-body-name: body
+  /maratp-client/{id}:
+    get:
+      tags:
+      - maratp
+      summary: Get a client by ID
+      operationId: ClientGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/client'
+        500:
+          description: Database error
+          content: {}
+    put:
+      tags:
+      - maratp
+      summary: Update an existing client
+      operationId: ClientUpdate
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Client object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/client'
+        required: true
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/client'
+        500:
+          description: Database error
+          content: {}
+      x-codegen-request-body-name: body
+    delete:
+      tags:
+      - maratp
+      summary: Delete an existing client
+      operationId: ClientDelete
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/client'
+        500:
+          description: Database error
+          content: {}
+  /maratp-trajets:
+    get:
+      tags:
+      - maratp
+      summary: Get all journeys
+      operationId: JourneysGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/journey'
+        500:
+          description: Database error
+          content: {}
+  /maratp-trajets/{type}:
+    get:
+      tags:
+      - maratp
+      summary: Get number of clients, their age and their gender for a journey type
+      operationId: JourneyGET
+      parameters:
+      - name: type
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - calme
+          - santé
+          - actif
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/journeyTotals'
+        500:
+          description: Database error
+          content: {}
+  /maratp-clients-scoring:
+    get:
+      tags:
+      - maratp
+      summary: Get criteria ranking and scoring averages for all user journeys
+      operationId: ClientsScoringGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/score'
+        500:
+          description: Database error
+          content: {}
+  /maratp-client-scoring/{id}:
+    get:
+      tags:
+      - maratp
+      summary: Get criteria ranking and scoring from user journeys by user ID
+      operationId: ClientScoringGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/score'
+        500:
+          description: Database error
+          content: {}
+  /meteo:
+    get:
+      tags:
+      - paris
+      summary: Get weather and humidity percentage in realtime
+      operationId: WeatherGET
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/weather'
+        500:
+          description: Database error
+          content: {}
+  /espaces-verts:
+    get:
+      tags:
+      - paris
+      summary: Get all green areas of Paris
+      description: test
+      operationId: GreenAreasGET
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: string
+      - name: offset
+        in: query
+        schema:
+          type: string
+      - name: typologie
+        in: query
+        description: 'example: Décorations sur la voie publique'
+        schema:
+          type: string
+      - name: categorie
+        in: query
+        description: 'example: Jardiniere'
+        schema:
+          type: string
+      - name: code_postal
+        in: query
+        description: 'example: 75015'
+        schema:
+          type: string
+      - name: annee_ouverture
+        in: query
+        description: 'example: 1978'
+        schema:
+          type: string
+      - name: annee_renovation
+        in: query
+        description: 'example: 1995'
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/greenArea'
+        500:
+          description: Database error
+          content: {}
+  /espace-vert/{id}:
+    get:
+      tags:
+      - paris
+      summary: Get a green area by ID
+      operationId: GreenAreaGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/greenArea'
+        500:
+          description: Database error
+          content: {}
+  /stations-ratp:
+    get:
+      tags:
+      - ratp
+      summary: Get all RATP stations
+      operationId: StationsGET
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: string
+      - name: offset
+        in: query
+        schema:
+          type: string
+      - name: outside
+        in: query
+        schema:
+          type: string
+          enum:
+          - "true"
+          - "false"
+      - name: type
+        in: query
+        schema:
+          type: string
+          enum:
+          - train
+          - RER
+          - métro
+          - bus
+      - name: line
+        in: query
+        schema:
+          type: string
+          enum:
+          - A
+          - B
+          - "1"
+          - "2"
+          - "3"
+          - 3bis
+          - "4"
+          - "5"
+          - "6"
+          - "7"
+          - 7bis
+          - "8"
+          - "9"
+          - "10"
+          - "11"
+          - "12"
+          - "13"
+          - "14"
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ratpStation'
+        500:
+          description: Database error
+          content: {}
+  /station-ratp/{id}:
+    get:
+      tags:
+      - ratp
+      summary: Get a RATP station by ID
+      operationId: StationGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ratpStation'
+        500:
+          description: Database error
+          content: {}
+  /stations-velib:
+    get:
+      tags:
+      - velib
+      summary: Get all Vélib stations
+      operationId: RatpStationsGET
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: string
+      - name: offset
+        in: query
+        schema:
+          type: string
+      - name: borne
+        in: query
+        schema:
+          type: string
+          enum:
+          - OUI
+          - Non
+      - name: retour
+        in: query
+        schema:
+          type: string
+          enum:
+          - OUI
+          - NON
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/velibStation'
+        500:
+          description: Database error
+          content: {}
+  /station-velib/{id}:
+    get:
+      tags:
+      - velib
+      summary: Get a Vélib station by ID
+      operationId: VelibStationGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/velibStation'
+        500:
+          description: Database error
+          content: {}
+components:
+  schemas:
+    airQuality:
+      type: object
+      properties:
+        O3:
+          type: array
+          items:
+            type: number
+            format: double
+        NO2:
+          type: array
+          items:
+            type: number
+            format: double
+        PM10:
+          type: array
+          items:
+            type: number
+            format: double
+        PM25:
+          type: array
+          items:
+            type: number
+            format: double
+    featureCollection:
+      type: object
+      properties:
+        type:
+          type: string
+          example: FeatureCollection
+        features:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                example: Feature
+              geometry:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: Point
+                    coordinates:
+                      type: array
+                      items:
+                        type: array
+                        items:
+                            type: number
+                            format: double
+                  required:
+                    - type
+                    - coordinates
+            required:
+            - geometry
+    soundNuisance:
+      type: object
+      properties:
+        Decibels:
+          type: array
+          items:
+            type: number
+            format: double
+    landscapeNuisance:
+      type: object
+      properties:
+        Elevation:
+          type: array
+          items:
+            type: number
+            format: double
+    table:
+      type: array
+      items:
+        type: string
+        example: trajets
+    cols:
+      type: array
+      items:
+        type: string
+        example: id_user
+    rows:
+      type: array
+      items:
+        type: string
+        example: "80"
+    elevation:
+      type: object
+      properties:
+        Elevation:
+          type: array
+          items:
+            type: number
+            format: double
+    client:
+      required:
+      - identifiant
+      type: object
+      properties:
+        identifiant:
+          type: integer
+          format: int64
+        age:
+          type: string
+          example: "21"
+        genre:
+          type: string
+          example: homme
+        code_postal:
+          type: string
+          example: "93250"
+        anciennete:
+          type: integer
+          format: int64
+        abonne_alerting:
+          type: boolean
+          default: false
+        alertes:
+          type: string
+          example: '[[''rer-b'', ''07:00:00'', ''09:00:00'', ''vendredi''], [''rer-b'',
+            ''18:00:00'', ''20:00:00'', ''vendredi'']]'
+        titre_transport:
+          type: string
+          example: Navigo Annuel
+        frequence_transport:
+          type: string
+          example: Plusieurs fois par jour
+        favoris_horaires:
+          type: string
+          example: '[[''poissy'', ''RER_A'', ''cergy_le_haut_poissy_saint_germain_en_laye''],
+            [''poissy'', ''SNCF_52'', ''gare_saint_lazare'']]'
+        favoris_adresses:
+          type: string
+          example: '[[''lieu de travail'', 94800]]'
+    journey:
+      type: object
+      properties:
+        identifiant_trajet:
+          type: string
+          example: 6116A850
+        identifiant_utilisateur:
+          type: integer
+          format: int64
+        point_depart:
+          type: string
+          example: 48.8679895, 2.29820251
+        point_arrivee:
+          type: string
+          example: 48.85330798, 2.38197327
+        type_trajet:
+          type: string
+          example: calme
+        score_air:
+          type: integer
+          format: int64
+        score_affluence:
+          type: integer
+          format: int64
+        score_silence:
+          type: integer
+          format: int64
+        score_vision:
+          type: integer
+          format: int64
+        score_marche:
+          type: integer
+          format: int64
+        score_nature:
+          type: integer
+          format: int64
+        note_utilisateur:
+          type: integer
+          format: int64
+    journeyTotals:
+      type: object
+      properties:
+        totals:
+          type: object
+          properties:
+            total:
+              type: integer
+              format: int64
+            women:
+              type: integer
+              format: int64
+            men:
+              type: integer
+              format: int64
+        zero_to_eighteen:
+          type: object
+          properties:
+            women:
+              type: integer
+              format: int64
+            men:
+              type: integer
+              format: int64
+        nineteen_to_twentyfive:
+          type: object
+          properties:
+            women:
+              type: integer
+              format: int64
+            men:
+              type: integer
+              format: int64
+        twentysix_to_thirtyfour:
+          type: object
+          properties:
+            women:
+              type: integer
+              format: int64
+            men:
+              type: integer
+              format: int64
+        thirtyfive_to_fifty:
+          type: object
+          properties:
+            women:
+              type: integer
+              format: int64
+            men:
+              type: integer
+              format: int64
+        fiftyone_to_sixtyfive:
+          type: object
+          properties:
+            women:
+              type: integer
+              format: int64
+            men:
+              type: integer
+              format: int64
+        sixtysix_and_over:
+          type: object
+          properties:
+            women:
+              type: integer
+              format: int64
+            men:
+              type: integer
+              format: int64
+    score:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Marche
+        score:
+          type: integer
+          format: int64
+    weather:
+      type: object
+      properties:
+        temperature_celsius:
+          type: number
+          format: double
+        humidity_percentage:
+          type: number
+          format: double
+    greenArea:
+      required:
+      - identifiant_espace_vert
+      type: object
+      properties:
+        identifiant_espace_vert:
+          type: integer
+          format: int64
+        feature:
+          required:
+          - geometry
+          type: object
+          properties:
+            type:
+              type: string
+              example: Feature
+            geometry:
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: MultiPolygon
+                coordinates:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: array
+                      items:
+                        type: array
+                        items:
+                            type: number
+                            format: double
+              required:
+                - type
+                - coordinates
+            properties:
+              type: object
+              properties: {}
+        nom_de_lespace_vert:
+          type: string
+          example: CENTRE SPORTIF DIDOT
+        typologie_d_espace_vert:
+          type: string
+          example: Décorations sur la voie publique
+        categorie:
+          type: string
+          example: Jardiniere
+        adresse_numero:
+          type: integer
+        adresse_complement:
+          type: string
+          example: B
+        adresse_type_voie:
+          type: string
+          example: RUE
+        adresse_libelle_voie:
+          type: string
+          example: REIMS
+        code_postal:
+          type: integer
+          format: int64
+        surface_calculee:
+          type: integer
+          format: int64
+        surface_totale_reelle:
+          type: integer
+          format: int64
+        surface_horticole:
+          type: integer
+        presence_cloture:
+          type: string
+          example: Oui
+        perimetre:
+          type: number
+          format: double
+        annee_ouverture:
+          type: integer
+        annee_renovation:
+          type: integer
+        ancien_nom:
+          type: string
+          example: JARDIN DE LA DALLE DU PERIPHERIQUE PORTE DE VANVES
+        annee_changement_nom:
+          type: integer
+        nombre_entites:
+          type: integer
+        ouverture_24h_sur24:
+          type: string
+          example: Non
+        identifiant_division:
+          type: integer
+        idenifiant_atelier_horticole:
+          type: integer
+        ida3d_enb:
+          type: string
+          example: 194296 194300
+        site_villes:
+          type: string
+          example: SV
+        identifiant_equipement:
+          type: string
+          example: 4767 DJS
+        competence:
+          type: string
+          example: CA
+        url_plan:
+          type: string
+          example: http://p70-planet.apps.paris.mdp/Advitium/AppelPlan.asp?SystemId={1ED86C6E-0587-4045-A2D0-260669B88046}&Objectid=0
+        geo_point:
+          type: string
+          example: ""
+    ratpStation:
+      type: object
+      properties:
+        identifiant:
+            type: integer
+            format: int64
+        feature:
+            type: object
+            properties:
+                type:
+                    type: string
+                    example: Feature
+                geometry:
+                    type: object
+                    properties:
+                        type:
+                            type: string
+                            example: Point
+                        coordinates:
+                            type: array
+                            items:
+                                type: array
+                                items:
+                                    type: number
+                                    format: double
+                        properties:
+                            type: object
+                    required:
+                    - type
+                    - coordinates
+            required:
+                - geometry
+        name:
+            type: string
+            example: Châtelet
+        address:
+            type: string
+            example: 25 rue des Volontaires - 75115
+        coordinates:
+            type: string
+            example: 48.8414184427,2.30799364939
+        train_outside:
+            type: boolean
+            default: false
+        transport_type:
+            type: string
+            example: métro
+        line:
+            type: string
+            example: 7bis
+        line_index:
+            type: integer
+            format: int64    
+    velibStation:
+        type: object
+        properties:
+            identifiant_station:
+              type: integer
+              format: int64
+            feature:
+                type: object
+                properties:
+                    type:
+                        type: string
+                        example: Feature
+                    geometry:
+                        type: object
+                        properties:
+                            type:
+                                type: string
+                                example: Point
+                            coordinates:
+                                type: array
+                                items:
+                                    type: array
+                                    items:
+                                        type: number
+                                        format: double
+                            properties:
+                                type: object
+                        required:
+                        - type
+                        - coordinates
+                required:
+                    - geometry
+            nom_station:
+              type: string
+              example: Raspail - Bac
+            station_en_fonctionnement:
+              type: string
+              example: OUI
+            capacite_station:
+              type: integer
+              format: int64
+            nombre_bornettes_libres:
+              type: integer
+              format: int64
+            nombre_total_velos_disponibles:
+              type: integer
+              format: int64
+            velos_mecaniques_disponibles:
+              type: integer
+              format: int64
+            velos_electriques_disponibles:
+              type: integer
+              format: int64
+            borne_paiement_dispo:
+                type: string
+                example: OUI
+            retour_velib_possible:
+              type: string
+              example: OUI
+            derniere_actualisation:
+              type: string
+              format: date-time
+            coordonnees:
+              type: string
+              example: 48.8276738232,2.3209181428
+            nom_communes_equipees:
+              type: string
+              example: Paris
+            code_insee_communes_equipees:
+              type: integer
+              format: int64
+            
+              

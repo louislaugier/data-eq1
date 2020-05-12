@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:Execute xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns="http://www.opengis.net/wps/1.0.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:wcs="http://www.opengis.net/wcs/1.1.1" xmlns:wfs="http://www.opengis.net/wfs" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0.0" service="WPS" xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsAll.xsd">
+   <ows:Identifier>py:itineraire3</ows:Identifier>
+   <wps:DataInputs>
+      <wps:Input>
+         <ows:Identifier>points</ows:Identifier>
+         <wps:Data>
+            <wps:ComplexData mimeType="application/json">
+               <![CDATA[
+                  [
+                     {
+                        "type": "FeatureCollection",
+                        "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::27572" } },
+                        "features": [
+                           { "type": "Feature", "geometry": { "type": "Point", "coordinates": [ 604097.32, 2426988.33 ] }, "properties": {} }
+                        ]
+                     }
+                  ]
+               ]]>
+            </wps:ComplexData>
+         </wps:Data>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>indice</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_indice</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>no2</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_no2</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>o3</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_o3</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>pm10</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_pm10</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+      <wps:Input>
+         <ows:Identifier>pm25</ows:Identifier>
+         <wps:Reference mimeType="image/tiff" xlink:href="http://geoserver/wcs" method="POST">
+            <wps:Body>
+               <wcs:GetCoverage service="WCS" version="1.1.1">
+                  <ows:Identifier>WPS:dernier_pm25</ows:Identifier>
+                  <wcs:DomainSubset>
+                     <ows:BoundingBox crs="http://www.opengis.net/gml/srs/epsg.xml#27572">
+                        <ows:LowerCorner>534892.3112525493 2346865.8690996524</ows:LowerCorner>
+                        <ows:UpperCorner>690142.3112525493 2471690.8690996524</ows:UpperCorner>
+                     </ows:BoundingBox>
+                  </wcs:DomainSubset>
+                  <wcs:Output format="image/tiff" />
+               </wcs:GetCoverage>
+            </wps:Body>
+         </wps:Reference>
+      </wps:Input>
+   </wps:DataInputs>
+   <wps:ResponseForm>
+      <wps:RawDataOutput mimeType="application/json">
+         <ows:Identifier>result</ows:Identifier>
+      </wps:RawDataOutput>
+   </wps:ResponseForm>
+</wps:Execute>

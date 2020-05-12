@@ -1,0 +1,1 @@
+curl -H "Content-Type:text/xml" -d @example.xml -X POST http://magellan.airparif.asso.fr/geoserver/WPS/wps?authkey=YOURAPIKEY > example.geojson
