@@ -2,16 +2,12 @@ openapi: 3.0.1
 info:
   title: Citi+
   description: Documentation for Citi+ REST API.
-  termsOfService: https://www.ratp.fr/gestion-de-vos-donnees-personnelles
   contact:
     email: l_laugier@etu-webschoolfactory.fr
   license:
     name: MIT License
     url: http://localhost:80/api/v1/documentation/LICENSE
   version: 1.0.0
-externalDocs:
-  description: Find out more about Swagger
-  url: http://swagger.io
 servers:
 - url: http://localhost:80/api/v1/
 tags:
