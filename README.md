@@ -3,7 +3,7 @@
 
 ## Client : RATP
 
-Ce dossier contient le code back-end et le code front-end du projet Data de l'équipe 1 : le dashboard permettant de piloter la solution finale (mobile) **Citi+**
+Ce dossier contient le code back-end et le code front-end du projet Data de l'équipe 1 : le dashboard permettant de piloter la solution finale (mobile) **Citi+**.  
 
 ### Prérequis
 
@@ -24,7 +24,7 @@ Copier le dossier dans **$GOPATH/src/** puis :
 
 ```make run``` ou ```go run main.go```  
 
-Go va installer les packages nécessaires et servir l'application sur le port 80.  
+Go va installer les packages externes nécessaires et servir l'application sur le port 80.  
 Une documentation Swagger expliquant les différentes routes de l'API sera disponible à l'adresse suivante : http://localhost:80/api/v1/documentation/ (possibilité de tester les routes)
 
 ## Installation serveur front-end
