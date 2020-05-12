@@ -57,7 +57,7 @@ Les données présentes dans la table *trajets* de la base de données correspon
 ### Améliorations souhaitées
   
 - Une gestion plus précise des erreurs et des types de réponses (status codes) dans l'API
-- Optimiser les *memory leaks* côté client
+- Mieux gérer certaines *memory leaks* côté client
 
 ## Packages externes utilisées
 
