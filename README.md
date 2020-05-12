@@ -7,10 +7,10 @@ Ce dossier contient le code back-end et le code front-end du projet Data de l'é
 ### Prérequis
 
 L'installation de ce projet nécessite :  
-- Go >1.13 (https://golang.org/dl/)  
-- NPM (https://www.npmjs.com/get-npm) ou un autre package manager JS    
+- Go > 1.13 
+- NPM 
 
-Si NPM est déjà installé, s'assurer d'avoir la dernière version :
+S'assurer d'avoir la dernière version de NPM :
 
 ```sudo npm install npm@latest -g```
 
@@ -24,7 +24,7 @@ Copier le dossier dans **$GOPATH/src/** puis :
 ```make run``` ou ```go run main.go```  
 
 Go va installer les packages externes nécessaires et servir l'application sur le port 80.  
-Une documentation Swagger expliquant les différentes routes de l'API sera disponible à l'adresse suivante : http://localhost:80/api/v1/documentation/ (possibilité de tester les routes)
+Une documentation Swagger expliquant les différentes routes de l'API sera disponible à l'adresse suivante : http://localhost:80/api/v1/documentation/ (possibilité d'effectuer des requêtes)
 
 ## Installation serveur front-end
 
@@ -39,7 +39,7 @@ Servir l'application sur le port 5000 : ```serve -s build```
 
 ## Parties incomplètes du projet
 
-### Fausses donneés (modèles d'utilisation)
+### Modèles d'utilisation (fake data)
 
 Les données suivantes ont été simulées ou *randomisées* afin de rendre la présentation au client plus réaliste. Ces données sont censées provenir de l'application mobile (solution finale prototypée).
 

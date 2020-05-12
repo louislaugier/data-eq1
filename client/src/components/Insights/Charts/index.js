@@ -1,5 +1,4 @@
 import React from 'react'
-import Loader from 'react-loader'
 import Chart from 'react-apexcharts'
 import {fetchData} from '../../Map/functions'
 import {userData, journeySeries, journeyOptions} from '../data/journeys'
@@ -10,7 +9,6 @@ class Charts extends React.Component {
 	constructor(props) {
 		super(props)
     this.state = {
-      mounted: false,
       data: userData,
       journeySeries: [],
       journeyOptions: {},
@@ -32,7 +30,6 @@ class Charts extends React.Component {
           data: [this.state.data.zero_to_eighteen.women, this.state.data.nineteen_to_twentyfive.women, this.state.data.twentysix_to_thirtyfour.women, this.state.data.thirtyfive_to_fifty.women, this.state.data.fiftyone_to_sixtyfive.women, this.state.data.sixtysix_and_over.women],
         },
       ]})
-    this.state.mounted = true
   }
 
   handleCriteriaCompare = async (event) => {
@@ -80,6 +77,7 @@ class Charts extends React.Component {
   }
 
   async componentDidMount(){
+    this.mounted = true
     await this.setState({data: userData, journeySeries: journeySeries, journeyOptions: journeyOptions, criteriaSeries: criteriaSeries, criteriaOptions: criteriaOptions})
     const abcissa = []
     abcissa.push('1er arrondissement')
@@ -103,7 +101,7 @@ class Charts extends React.Component {
   }
 
   componentWillUnmount() {
-    this.state.mounted = false
+    this.mounted = false
   }
 
 	render() {
@@ -133,7 +131,7 @@ class Charts extends React.Component {
             <div>
               <div>
                 <span>Total :</span>
-                <span>{this.state.data.totals.total || <Loader loaded={this.mounted}/>}</span>
+                <span>{this.state.data.totals.total}</span>
               </div>
               <div>
                 <span>Femmes :</span>
