@@ -52,7 +52,8 @@ Les données présentes dans la table *trajets* de la base de données correspon
 ### Parties incomplètes
 
 - La page de connexion n'authentifie pas d'utilisateur.
-- Page **Données** : La météo affichée pour les graphiques de la qualité de l'air est la même pour tout Paris, elle ne change pas pour chaque arrondissement. Le bouton d'ajout d'une table n'en crée pas réellement une. Le bouton de modification d'une table permet simplement de la visualiser, la fonctionnalité d'ajout et de modification des entrées ne fonctionne que côté client. Le bouton de téléchargement d'une table au format CSV n'est pas fonctionnel.
+- Page **Données** : La météo affichée pour les graphiques de la qualité de l'air est la même pour tout Paris, elle ne change pas pour chaque arrondissement. Le menu de changement de *timeframes* n'est pas fonctionnel.  
+Le bouton d'ajout d'une table n'en crée pas réellement une. Le bouton de modification d'une table permet simplement de la visualiser, la fonctionnalité d'ajout et de modification des entrées ne fonctionne que côté client. Le bouton de téléchargement d'une table au format CSV n'est pas fonctionnel.
 
 ### Améliorations souhaitées
   
