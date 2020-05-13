@@ -36,10 +36,7 @@ La route suivante permet d'accéder à la documentation Swagger expliquant les r
 
 Se rendre dans le dossier **client** puis ouvrir le fichier à l'emplacement suivant : src/components/Map/index.js  
 
-Remplacer "MapboxToken" à la ligne 44 par la bonne clé API (cf. mail).
-
-
-```cd ./client```
+Remplacer "MapboxToken" à la ligne 44 par la bonne clé API (cf. mail).  
 
 Installer les dépendances : ```npm i```
 
@@ -47,11 +44,9 @@ Générer un build de production : ```npm run build```
 
 Servir l'application sur le port 5000 : ```serve -s build```
 
-## Parties incomplètes du projet
+## Modèles d'utilisation (fake data)
 
-### Modèles d'utilisation (fake data)
-
-Les données suivantes ont été simulées ou *randomisées* afin de rendre la présentation au client plus réaliste. Ces données sont censées provenir de l'application mobile (solution finale prototypée).
+Les données suivantes ont été simulées ou *randomisées* afin de rendre la présentation au client réaliste. Ces données sont censées provenir de l'application mobile (solution finale prototypée).
 
 - Onglet **Insights** : données en haut de page et en bas de page, indices du graphique de droite (faux indices, il s'agit des unités de chaque critère).
 
@@ -59,28 +54,23 @@ Les données suivantes ont été simulées ou *randomisées* afin de rendre la p
 
 Les données présentes dans la table *trajets* de la base de données correspondent à des exemples de trajets générés par les utilisateurs de l'app mobile prototypée. Ces trajets ont été assignés à des clients par leur identifiant (table fournie en début de projet). La barre de recherche d'un utilisateur (onglet **Voyageurs**) ne fonctionne avec qu'avec cet identifiant, pour les clients ayant effectué des trajets.
 
-### Parties incomplètes
+## Parties incomplètes
 
 - La page de connexion n'authentifie pas d'utilisateur.
 - Page **Données** : La météo affichée pour les graphiques de la qualité de l'air est la même pour tout Paris, elle ne change pas pour chaque arrondissement. Le menu de changement de *timeframes* n'est pas fonctionnel.  
 Le bouton d'ajout d'une table n'en crée pas réellement une. Le bouton de modification d'une table permet simplement de la visualiser, la fonctionnalité d'ajout et de modification des entrées ne fonctionne que côté client. Le bouton de téléchargement d'une table au format CSV n'est pas fonctionnel.
-
-### Améliorations souhaitées
-  
-- Une gestion plus précise des erreurs et des types de réponses (status codes) dans l'API
-- Un responsive design plus qualitatif pour les écrans de hauteur inférieure à  px
 
 ## Packages externes utilisées
 
 ### Go
 - https://github.com/gorilla/mux : Multiplexer de requêtes HTTP (routing & dispatching) 
 - https://github.com/lib/pq : Driver Postgres pour le package database/sql de la librairie standard
-- https://github.com/paulmach/go.geojson : Encodeur et décodeur de GeoJSON
+- https://github.com/paulmach/go.geojson : Encodeur et décodeur d'objets GeoJSON
 
 ### React
 - https://www.npmjs.com/package/mapbox-gl : Cartes interactives et personnalisables
 - https://www.npmjs.com/package/react-apexcharts : Datavisualisations interactives
-- https://www.npmjs.com/package/material-table : Tableaux personnalisables
+- https://www.npmjs.com/package/material-table : Tableaux personnalisables et 
 - https://www.npmjs.com/package/react-router : Routeur côté client
 
 
