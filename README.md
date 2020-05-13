@@ -27,7 +27,7 @@ Installer les packages Go nécessaires:
 
 ```make install``` ou ```go get -u ./...```  
 
-Lancer l'application:
+Servir l'API sur le port 80 :
 ```make run``` ou ```go run main.go``` 
 
 La route suivante permet d'accéder à la documentation Swagger expliquant les routes et permet d'effectuer des tests : http://localhost:80/api/v1/documentation/.
