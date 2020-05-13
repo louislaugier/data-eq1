@@ -12,11 +12,17 @@ L'installation de ce projet nécessite :
 
 ## Installation serveur HTTP
 
-Copier le dossier dans **$GOPATH/src/** puis :
+Cloner ce repository dans **$GOPATH/src/**.  
+Se rendre dans **API/model/**, puis ouvrir les fichiers aux emplacements suivants :  
+- /airparif/APIKey.go
+- /elevation/APIKey.go
+- /paris/APIKey.go
+Remplacer les *APIKey* par les clés API nécessaires (cf. mail)  
+Ouvrir database/database.go et remplacer *username:password@host:port/databasename* par les bons identifiants  
 
+Installer les packages Go nécessaires:  
 ```cd API```
 
-Installer les packages nécessaires:  
 ```make install``` ou ```go get -u ./...```  
 
 Lancer l'application:
