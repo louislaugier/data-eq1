@@ -44,7 +44,7 @@ Générer un build de production : ```npm run build```
 
 Servir l'application sur le port 5000 : ```serve -s build```
 
-## Modèles d'utilisation
+## Modèles de compréhension
 
 Les données suivantes ont été simulées ou *randomisées* afin de rendre la présentation au client réaliste. Ces données sont censées provenir de l'application mobile (solution finale prototypée).
 
