@@ -41,10 +41,9 @@ class Map extends React.Component {
     }
     let map = ''
     if (this.mounted) {
-      mapboxgl.accessToken = 'pk.eyJ1IjoibG91aXNsOTgiLCJhIjoiY2s3OWE2cHZpMDN0NjNlbnNwdjV1b2gzcSJ9.VjiswdWuJvyw_Eqxx4Vs2g'
+      mapboxgl.accessToken = 'MapboxToken'
       map = new mapboxgl.Map({
         container: 'Map',
-        style: 'mapbox://styles/mapbox/light-v10',
         center: [2.3490508924482185, 48.858064440253486],
         zoom: 11.5,
         preserveDrawingBuffer: true,

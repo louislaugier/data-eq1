@@ -18,8 +18,8 @@ Se rendre dans **API/model/**, puis ouvrir les fichiers aux emplacements suivant
 - /elevation/APIKey.go
 - /paris/APIKey.go  
 
-Remplacer les *APIKey* par les clés API nécessaires (cf. mail)  
-Ouvrir database/database.go et remplacer *username:password@host:port/databasename* par les bons identifiants  
+Remplacer les *APIKey* par les clés API nécessaires (cf. mail).  
+Ouvrir database/database.go et remplacer *username:password@host:port/databasename* par les bons identifiants.  
 
 Installer les packages Go nécessaires:  
 
@@ -30,13 +30,17 @@ Installer les packages Go nécessaires:
 Lancer l'application:
 ```make run``` ou ```go run main.go``` 
 
-La route suivante permet d'accéder à la documentation Swagger expliquant les routes et d'effectuer des tests : http://localhost:80/api/v1/documentation/ .
+La route suivante permet d'accéder à la documentation Swagger expliquant les routes et d'effectuer des tests : http://localhost:80/api/v1/documentation/.
 
 ## Installation serveur front-end
 
+Se rendre dans le dossier **client** puis ouvrir le fichier à cet emplacement:
+MapboxToken
+
+
 ```cd ./client```
 
-Puis installer les dépendances : ```npm i```
+Installer les dépendances : ```npm i```
 
 Générer un build de production : ```npm run build```
 
