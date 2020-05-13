@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
+import {Redirect} from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import Login from './components/Login'
 import Map from './components/Map'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +18,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <>
+        <Redirect to="/connexion" />
         <div className='App'>
           <Sidebar
             enabled={this.state.sidebar}
@@ -35,7 +36,7 @@ class App extends React.Component {
             {this.state.current}
           </div>
         </div>
-      </Router>
+      </>
     )
   }
 }

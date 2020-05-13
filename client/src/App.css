@@ -2,7 +2,7 @@
   display: none;
 } */
 
-body {
+body{
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,7 +41,7 @@ select{
   align-items: center;
   height: 10vh;
   position: relative;
-  left: 22%;
+  left: 27%;
   cursor: pointer;
 }
 
@@ -258,7 +258,7 @@ ul{
 .Map-container .loader{
   position: absolute;
   left: 58vw;
-  top: 34vh;
+  top: 35vh;
 }
 
 #Map{
@@ -270,6 +270,14 @@ ul{
 .Map-popup{
   display: flex;
   flex-wrap: wrap;
+}
+
+.mapboxgl-popup{
+  text-align: center !important;
+}
+
+.mapboxgl-popup h3{
+  margin: 0.5vh 0 -1vh 0 !important;
 }
 
 .mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right{
@@ -915,17 +923,17 @@ input[type='checkbox']:checked:after{
   margin-right: 3vw;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
   width: 0.75vw;
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track{
   background: white;
   border: 2px solid #DFE0EB;
   border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb{
   background: #4BC0AD !important;
   border-radius: 8px;
 }
@@ -975,7 +983,7 @@ input[type='checkbox']:checked:after{
 .Create-table{
   padding: 2vh 0 0 0;
   width: 72vw;
-  height: 45vh;
+  height: 45.5vh;
   overflow-x: auto;
 }
 
@@ -1203,7 +1211,7 @@ input[type='checkbox']:checked:after{
 }
 
 .Chart.journeys{
-  width: 37vw;
+  width: 35vw;
   left: unset;
 }
 
@@ -1265,7 +1273,7 @@ input[type='checkbox']:checked:after{
 
 .Users-total>div:nth-child(2)>div>span:nth-child(2){
   font-size: 1.75rem;
-  margin: 0.375vh 0 0 2.5vw;
+  margin: 0.375vh 0 0 3vw;
   font-weight: bold;
 }
 
@@ -1797,4 +1805,291 @@ input:checked + .Slider:before{
   font-size: 0.75rem;
   margin-top: 3vh;
   cursor: pointer;
+}
+/* Users */
+
+@media only screen and (min-height: 799px) and (max-height: 1199px){
+  .Home-link{
+    height: 16vh;
+  }
+  .Menu-tabs span:before{
+    margin-left: 19% !important;
+  }
+  .Login-form input, .Login-form button{
+    height: 4.5vh;
+  }
+  .Menu-tabs .Users.Border{
+    padding-bottom: 3.75vh;
+  }
+  .App-header span:nth-child(2){
+    margin-bottom: 2vh !important;
+  }
+  .Map-container{
+    height: 57vh;
+  }
+  .Criteria-items{
+    margin: 0;
+  }
+  .Heatzone-select ul{
+    padding: 1vh 0 0 2vw;
+  }
+  #Map{
+    height: 44vh;
+  }
+  .Toggle-menu, .Heatzone-select, .Criteria-select{
+    height: 23vh;
+  }
+  .Criteria-select ul{
+    margin-top: -0.75vh;
+  }
+  .Criteria-select ul li{
+    margin-top: 2vh;
+  }
+  .Chart-sidebar-list{
+    height: 35vh;
+  }
+  .Chart-sidebar-list h4{
+    margin: 1vh 0;
+  }
+  .Chart-sidebar-list li{
+    margin: 0;
+    padding: 0;
+  }
+  .Filter-arrondissement .Dropdown-icon:after{
+    top: -3.75vh;
+  }
+  .Dropdown-icon:after{
+    top: 0.75vh;
+  }
+  .Filter-menu select{
+    height: 5vh;
+  }
+  .App-header .Filter-menu{
+    margin-top: 0;
+    position: relative;
+    top: -3vh;
+  }
+  .Chart-content .Subtitle-arrondissement{
+    top: 10.5vh;
+    left: 2.5vw;
+  }
+  .Filter-arrondissement .Dropdown-icon:after{
+    top: -4.75vh;
+  }
+  .Dropdown-icon:after{
+    top: 1.75vh;
+  }
+  .Timeframe-icon:after{
+    top: 0;
+  }
+  .Chart-sidebar-item{
+    padding: 0.35vh 0;
+  }
+  .New-table{
+    height: 4.5vh;
+    width: 16vw;
+  }
+  .Database-tables{
+    height: 31.5vh;
+  }
+  .Table-list{
+    height: 19vh;
+  }
+  .Create-table button, .Create-table input, .Create-table select{
+    height: 4.5vh;
+  }
+  .Create-table{
+    height: 58.5vh;
+  }
+  .Insights-head{
+    margin-top: 1vh;
+  }
+  .Insights-charts{
+    margin: 1.5vh 0;
+  }
+  .Chart.journeys{
+    min-height: unset;
+  }
+  .Users-chart select, .Criteria-chart-head select{
+    height: 4vh;
+    margin-bottom: -1vh;
+  }
+  .Criteria-chart-head select{
+    margin-bottom: 2vh;
+  }
+  .Users-total>div:nth-child(2)>div>span:nth-child(2){
+    font-size: 1.25rem;
+    margin: -0.35vh 0 0 4vw;;
+  }
+  .Insights-footer{
+    height: 19vh;
+  }
+  .Insights-footer-expand{
+    height: 3.5vh;
+    margin-bottom: 1vh;
+  }
+  .Insights-footer>div>h3{
+    margin: 0.75vh 0;
+    font-size: 1rem;
+    position: relative;
+    top: 0.5vh;
+  }
+  .Footer-item span{
+    margin-bottom: 0;
+  }
+  .User-container input{
+    height: 3.5vh;
+    margin-right: 0.75vw;
+  }
+  .User-container input{
+    height: 3.5vh;
+    margin-right: 0.75vw;
+  }
+  .User-container button{
+    height: 3.5vh;
+    width: 3.5vh;
+  }
+  .User>div>p, .User>div>span{
+    margin: 0;
+  }
+  .User .Badges h3, .User .Badges span:nth-child(2), .User .Relation h3, .User .Relation span:nth-child(2){
+    margin-bottom: 0;
+  }
+  .User .Badges>div:nth-child(4) span:nth-child(4){
+    display: none;
+  }
+  .User .Badges span:nth-child(8){
+    display: none;
+  }
+  .Badges>div:nth-child(4){
+    margin-top: 0.75vh;
+  }
+  .User .Relation .User-positive:after{
+    margin-top: 1vh;
+  }
+  .User .Stats div span:nth-child(7){
+    margin-bottom: 2vh;
+  }
+  .Criteria-ranking{
+    height: 20vh;
+  }
+  .Criteria-ranking .Head-item-subtitle{
+    margin-bottom: 1vh;
+  }
+}
+
+@media only screen and (min-height: 900px) and (max-height: 1049px){
+  .App-header span:nth-child(2){
+    margin-bottom: 3.5vh !important;
+  }
+  .Menu-tabs .Users.Border{
+    padding-bottom: 2.75vh;
+  }
+  .Footer-item span:nth-child(2), .Footer-item span:nth-child(3), .Footer-item span:nth-child(4){
+    margin-bottom: 0.5vh;
+  }
+  .User .Badges>div>img, .User>div>p:nth-child(3){
+    margin-top: 1vh;
+  }
+  .User .Stats div span:nth-child(7){
+    margin-bottom: -2vh;
+  }
+  .User .Stats div p:nth-child(8){
+    position: relative;
+    top: 3vh;
+  }
+}
+
+@media only screen and (min-height: 1050px) and (max-height: 1199px){
+  .Home-link{
+    top: -1.5vh;
+  }
+  .Login-form input, .Login-form button {
+    height: 4vh;
+  }
+  .Menu-tabs{
+    position: relative;
+    top: -2vh;
+  }
+  .Menu-tabs .Users.Border{
+    padding-bottom: 2.25vh;
+  }
+  .Criteria-items{
+    margin-top: 1.5vh;
+  }
+  .Map-container{
+    height: 60vh;
+  }
+  #Map{
+    height: 47vh;
+  }
+  .Filter-menu select{
+    height: 4vh;
+  }
+  .Chart-container{
+    margin-top: -1vh;
+    height: 47vh;
+  }
+  .Criteria-select ul{
+    margin-top: 2.25vh;
+  }
+  .Database-tables{
+    height: 32.5vh;
+  }
+  .New-table{
+    height: 4vh;
+  }
+  .Chart-content .Subtitle-arrondissement{
+    top: 8.5vh;
+    left: 2.5vw;
+  }
+  .Filter-arrondissement .Dropdown-icon:after{
+    top: -4vh;
+  }
+  .Dropdown-icon:after{
+    top: 1.5vh;
+  }
+  .Table-list{
+    height: 20vh;
+  }
+  .Chart-sidebar-list{
+    margin-top: 4vh;
+  }
+  .Chart-sidebar-list li{
+    padding: 1vh 0;
+  }
+  .Chart.journeys .apexcharts-title-text{
+    left: 5vw;
+  }
+  .Footer-item span:nth-child(2), .Footer-item span:nth-child(3), .Footer-item span:nth-child(4){
+    margin-bottom: 1vh;
+  }
+  .Insights-footer{
+    height: 20vh;
+  }
+  .User{
+    height: 30vh;
+  }
+  .User>div>p, .User>div>span{
+    margin-bottom: 1vh;
+  }
+  .Criteria{
+    margin-top: 2vh;
+  }
+  .User .Stats div span:nth-child(7) {
+    margin-bottom: 0vh;
+  }
+  .User .Stats div p:nth-child(8) {
+    top: 1vh;
+    position: relative;
+  }
+  .Badges>div:nth-child(4) {
+    margin-top: 2.75vh;
+  }
+  .Badges>div>p:nth-child(3) {
+    margin-bottom: 3vh;
+  }
+  .User .Relation .User-positive:after {
+    margin-top: 3vh;
+  }
 }

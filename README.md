@@ -10,21 +10,19 @@ L'installation de ce projet nécessite :
 - Go > 1.13 
 - NPM 
 
-S'assurer d'avoir la dernière version stable de NPM :
-
-```sudo npm install npm@latest -g```
-
-
 ## Installation serveur HTTP
 
 Copier le dossier dans **$GOPATH/src/** puis :
 
 ```cd API```
 
-```make run``` ou ```go run main.go```  
+Installer les packages nécessaires:  
+```make install``` ou ```go get -u ./...```  
 
-Go va installer les packages externes nécessaires et servir l'application sur le port 80.  
-Une documentation Swagger expliquant les différentes routes de l'API sera disponible à l'adresse suivante : http://localhost:80/api/v1/documentation/ (possibilité d'effectuer des requêtes)
+Lancer l'application:
+```make run``` ou ```go run main.go``` 
+
+La route suivante permet d'accéder à la documentation Swagger expliquant les routes : http://localhost:80/api/v1/documentation/ et permet d'effectuer des tests.
 
 ## Installation serveur front-end
 
@@ -35,7 +33,6 @@ Puis installer les dépendances : ```npm i```
 Générer un build de production : ```npm run build```
 
 Servir l'application sur le port 5000 : ```serve -s build```
-
 
 ## Parties incomplètes du projet
 
@@ -58,7 +55,7 @@ Le bouton d'ajout d'une table n'en crée pas réellement une. Le bouton de modif
 ### Améliorations souhaitées
   
 - Une gestion plus précise des erreurs et des types de réponses (status codes) dans l'API
-- Mieux gérer certaines *memory leaks* côté client
+- Un responsive design plus qualitatif pour les écrans de hauteur inférieure à  px
 
 ## Packages externes utilisées
 

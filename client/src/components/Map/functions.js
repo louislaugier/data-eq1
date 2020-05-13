@@ -1,4 +1,5 @@
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
+import {getLineLogo} from './data/lines'
 
 export async function fetchData(query) {
   const data = []
@@ -66,21 +67,6 @@ export function addTrainLinesToMap(trainLines, map) {
         'line-width': 3
       }
     })
-    const popup = new mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false,
-      className: 'Map-popup'
-    })
-    map.on('mouseenter', value.name, function(mousePos) {
-      map.getCanvas().style.cursor = 'pointer'
-      popup.setLngLat([mousePos.lngLat.lng, mousePos.lngLat.lat])
-        .setHTML('Ligne : ' + mousePos.features[0].properties.ligne + '<br>Nombre de stations : ' + mousePos.features[0].properties.nombreStations)
-        .addTo(map)
-    })
-    map.on('mouseleave', value.name, function() {
-      map.getCanvas().style.cursor = ''
-      popup.remove()
-    })
   }
 }
 
@@ -106,7 +92,8 @@ export function getPopupDescriptions(map) {
   map.on('mouseenter', 'stations-metro-RER', function(mousePos) {
     map.getCanvas().style.cursor = 'pointer'
     popup.setLngLat([mousePos.lngLat.lng, mousePos.lngLat.lat])
-      .setHTML('Nom : ' + mousePos.features[0].properties.nom + '<br>Ligne : ' + mousePos.features[0].properties.ligne + '<br>Type de transport : ' + mousePos.features[0].properties.typeTransport + '<br>Adresse : ' + mousePos.features[0].properties.adresse)
+    // eslint-disable-next-line
+      .setHTML('<img src=' + getLineLogo(mousePos.features[0].properties.ligne) + '/><br>' + '<h3>' + mousePos.features[0].properties.nom + '</h3><br>' + mousePos.features[0].properties.adresse)
       .addTo(map)
   })
   map.on('mouseleave', 'stations-metro-RER', function() {
@@ -116,7 +103,7 @@ export function getPopupDescriptions(map) {
   map.on('mouseenter', 'espaces-verts', function(mousePos) {
     map.getCanvas().style.cursor = 'pointer'
     popup.setLngLat([mousePos.lngLat.lng, mousePos.lngLat.lat])
-      .setHTML('Nom : ' + mousePos.features[0].properties.nom + '<br>Catégorie : ' + mousePos.features[0].properties.categorie + '<br>Typologie : ' + mousePos.features[0].properties.typologie + '<br>Année d\'ouverture : ' + mousePos.features[0].properties.anneeOuverture + '<br>Ouverture 24h sur 24 : ' + mousePos.features[0].properties.ouverture24 + '<br>Périmètre : ' + mousePos.features[0].properties.perimetre + '<br>Présence cloture : ' + mousePos.features[0].properties.presenceCloture)
+      .setHTML('<h3>' + mousePos.features[0].properties.nom + '</h3><br>Catégorie : ' + mousePos.features[0].properties.categorie + '<br>Typologie : ' + mousePos.features[0].properties.typologie + '<br>Année d\'ouverture : ' + mousePos.features[0].properties.anneeOuverture + '<br>Ouverture 24h sur 24 : ' + mousePos.features[0].properties.ouverture24 + '<br>Périmètre : ' + mousePos.features[0].properties.perimetre + '<br>Présence cloture : ' + mousePos.features[0].properties.presenceCloture)
       .addTo(map)
   })
   map.on('mouseleave', 'espaces-verts', function() {
@@ -126,7 +113,7 @@ export function getPopupDescriptions(map) {
   map.on('mouseenter', 'stations-velib', function(mousePos) {
     map.getCanvas().style.cursor = 'pointer'
     popup.setLngLat([mousePos.lngLat.lng, mousePos.lngLat.lat])
-      .setHTML('Nom : ' + mousePos.features[0].properties.nomStation + '<br>Dernière actualisation : ' + mousePos.features[0].properties.derniereActualisation + '<br>Bornettes libres : ' + mousePos.features[0].properties.nombreBornettesLibres + '<br>Capacité de la station : ' + mousePos.features[0].properties.capaciteStation + '<br>Vélos électriques disponibles : ' + mousePos.features[0].properties.velosElectriquesDisponibles + '<br>Vélos mécaniques disponibles : ' + mousePos.features[0].properties.velosMecaniquesDisponibles + '<br>Station en fonctionnement : ' + mousePos.features[0].properties.stationFonctionnement + '<br>Retour du Vélib possible : ' + mousePos.features[0].properties.retourVelibPossible)
+      .setHTML('<h3>' + mousePos.features[0].properties.nomStation + '</h3><br>Dernière actualisation : ' + mousePos.features[0].properties.derniereActualisation + '<br>Bornettes libres : ' + mousePos.features[0].properties.nombreBornettesLibres + '<br>Capacité de la station : ' + mousePos.features[0].properties.capaciteStation + '<br>Vélos électriques disponibles : ' + mousePos.features[0].properties.velosElectriquesDisponibles + '<br>Vélos mécaniques disponibles : ' + mousePos.features[0].properties.velosMecaniquesDisponibles + '<br>Station en fonctionnement : ' + mousePos.features[0].properties.stationFonctionnement + '<br>Retour du Vélib possible : ' + mousePos.features[0].properties.retourVelibPossible)
       .addTo(map)
   })
   map.on('mouseleave', 'stations-velib', function() {

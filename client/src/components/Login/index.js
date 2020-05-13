@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import logo from '../../login-logo.png'
 import Header from '../Header'
 
@@ -24,7 +25,9 @@ class Login extends React.Component {
             </div>
             <img src={logo} className='Login-logo' alt='Logo'/>
           </div>
-          <button type='button' onClick={this.props.login}>Connexion</button>
+          <Link to='/carte'>
+            <button type='button' onClick={this.props.login}>Connexion</button>
+          </Link>
         </form>
       </>
     )
