@@ -34,8 +34,9 @@ La route suivante permet d'accéder à la documentation Swagger expliquant les r
 
 ## Installation serveur front-end
 
-Se rendre dans le dossier **client** puis ouvrir le fichier à cet emplacement:
-MapboxToken
+Se rendre dans le dossier **client** puis ouvrir le fichier à l'emplacement suivant : src/components/Map/index.js  
+
+Remplacer "MapboxToken" à la ligne 44 par la bonne clé API (cf. mail).
 
 
 ```cd ./client```
