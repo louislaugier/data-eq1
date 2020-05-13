@@ -38,15 +38,13 @@ Se rendre dans le dossier **client** puis ouvrir le fichier à l'emplacement sui
 
 Remplacer **MapboxToken** à la ligne 44 par la bonne clé API (cf. mail).  
 
-Installer les dépendances :  
+Installer les dépendances, générer un build de production puis servir ce build sur le port 5000 :  
 ```
 cd client
 npm i
+npm run build
+serve -s build
 ```
-
-Générer un build de production : ```npm run build```
-
-Servir l'application sur le port 5000 : ```serve -s build```
 
 ## Modèles de compréhension
 
