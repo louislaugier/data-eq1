@@ -1,27 +1,6 @@
 
-# Created by https://www.gitignore.io/api/go,linux,macos,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=go,linux,macos,visualstudiocode
-
-### Go ###
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-### Go Patch ###
-/vendor/
-/Godeps/
+# Created by https://www.gitignore.io/api/linux,macos,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=linux,macos,visualstudiocode
 
 ### Linux ###
 *~
@@ -77,4 +56,4 @@ Temporary Items
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/go,linux,macos,visualstudiocode
+# End of https://www.gitignore.io/api/linux,macos,visualstudiocode
