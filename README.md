@@ -38,7 +38,11 @@ Se rendre dans le dossier **client** puis ouvrir le fichier à l'emplacement sui
 
 Remplacer **MapboxToken** à la ligne 44 par la bonne clé API (cf. mail).  
 
-Installer les dépendances : ```npm i```
+Installer les dépendances :  
+```
+cd client
+npm i
+```
 
 Générer un build de production : ```npm run build```
 
