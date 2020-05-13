@@ -29,7 +29,7 @@ go get
 go run main.go
 ```
 
-La route suivante permet d'accéder à la documentation Swagger expliquant les routes et et d'y effectuer des tests : http://localhost:80/api/v1/documentation/.
+La route suivante permet d'accéder à la documentation Swagger expliquant les routes et d'y effectuer des tests : http://localhost:80/api/v1/documentation/
 
 ## Installation serveur front-end
 
