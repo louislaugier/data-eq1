@@ -18,7 +18,7 @@ Se rendre dans **/API/model/**, puis ouvrir les fichiers aux emplacements suivan
 - /elevation/APIKey.go
 - /paris/APIKey.go  
 
-Remplacer les *APIKey* par les clés API nécessaires (cf. mail).  
+Remplacer les **APIKey** par les clés API nécessaires (cf. mail).  
 Ouvrir database/database.go et remplacer *username:password@host:port/databasename* par les bons identifiants.  
 
 Installer les packages Go nécessaires:  
@@ -36,7 +36,7 @@ La route suivante permet d'accéder à la documentation Swagger expliquant les r
 
 Se rendre dans le dossier **client** puis ouvrir le fichier à l'emplacement suivant : src/components/Map/index.js  
 
-Remplacer "MapboxToken" à la ligne 44 par la bonne clé API (cf. mail).  
+Remplacer **MapboxToken**"** à la ligne 44 par la bonne clé API (cf. mail).  
 
 Installer les dépendances : ```npm i```
 
