@@ -21,7 +21,7 @@ Se rendre dans **/API/model/**, puis ouvrir les fichiers aux emplacements suivan
 Remplacer les **APIKey** par les clés API nécessaires (cf. mail).  
 Ouvrir database/database.go et remplacer *username:password@host:port/databasename* par les bons identifiants.  
 
-Installer les packages nécessaires servir l'API sur le port 80 :  
+Installer les packages nécessaires et servir l'API sur le port 80 :  
 
 ```
 cd API
