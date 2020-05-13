@@ -13,7 +13,7 @@ L'installation de ce projet nécessite :
 ## Installation serveur HTTP
 
 Cloner ce repository dans **$GOPATH/src/**.  
-Se rendre dans **API/model/**, puis ouvrir les fichiers aux emplacements suivants :  
+Se rendre dans **/API/model/**, puis ouvrir les fichiers aux emplacements suivants :  
 - /airparif/APIKey.go
 - /elevation/APIKey.go
 - /paris/APIKey.go  
