@@ -141,7 +141,7 @@ export function dataVisibility(data, map, bool) {
     map.setLayoutProperty('nuisances-sonores', 'visibility', 'none')
     map.setLayoutProperty('nuisances-visuelles', 'visibility', 'none')
   } else if (data === 'qualite-air') {
-    this.setState({heatZone: 'Qualité de l\'air', heatZoneGradientClassName: 'Qualite-air', heatZoneUnit: 'indice'})
+    this.setState({heatZone: 'Pollution de l\'air', heatZoneGradientClassName: 'Qualite-air', heatZoneUnit: 'indice'})
     map.setLayoutProperty('nuisances-sonores', 'visibility', 'none')
     map.setLayoutProperty('nuisances-visuelles', 'visibility', 'none')
   } else if (data === 'nuisances-sonores') {

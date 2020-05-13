@@ -28,10 +28,10 @@ class HeatZoneForm extends React.Component {
                     <span className='Radio'/>
                     <input onClick={() => {
                       this.props.dataVisibility('qualite-air', this.props.map,true)
-                      this.setState({heatZone: 'Qualité de l\'air'})
+                      this.setState({heatZone: 'Pollution de l\'air'})
                     }} type='radio' name='heatzone'/>
                   </div>
-                  <label>Qualité de l'air</label>
+                  <label>Pollution de l'air</label>
               </li>
               <li>
                   <div className='Dot'>
