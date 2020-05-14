@@ -74,7 +74,7 @@ paths:
     get:
       tags:
       - airparif
-      summary: Get air quality data by arrondissement number for the last 7 days
+      summary: Save airparif data for current day and get data from last 7 days for 1 arrondissement or averages for all of Paris
       description: Use "all" for an average of all arrondissements.
       operationId: DataGET
       parameters:
